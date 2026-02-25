@@ -1,4 +1,4 @@
-.PHONY: run backend frontend setup check pull-ocr
+# .PHONY: run backend frontend setup check pull-ocr
 
 # Run both the frontend and backend concurrently
 run:
@@ -22,7 +22,7 @@ setup:
 	@echo "Syncing backend dependencies..."
 	cd backend && uv sync
 	@echo "Pulling Tesseract OCR image via Podman (using docker-compose)..."
-	podman-compose pull ocr
+	podman compose up -d
 
 # Run formatters, linters, and type checkers for both
 check:
@@ -34,4 +34,4 @@ check:
 
 # Manually pull the OCR image (useful if first run is slow)
 pull-ocr:
-	podman-compose pull ocr
+	podman compose up -d

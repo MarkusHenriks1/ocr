@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Home, Menu, X } from "lucide-react";
+import { BookOpen, FileJson, Home, Menu, X } from "lucide-react";
 import { useState } from "react";
 
 export default function Header() {
@@ -7,24 +7,48 @@ export default function Header() {
 
 	return (
 		<>
-			<header className="p-4 flex items-center bg-gray-800 text-white shadow-lg">
-				<button
-					type="button"
-					onClick={() => setIsOpen(true)}
-					className="p-2 hover:bg-gray-700 rounded-lg transition-colors"
-					aria-label="Open menu"
-				>
-					<Menu size={24} />
-				</button>
-				<h1 className="ml-4 text-xl font-semibold">
-					<Link to="/">
-						<img
-							src="/tanstack-word-logo-white.svg"
-							alt="TanStack Logo"
-							className="h-10"
-						/>
-					</Link>
-				</h1>
+			<header className="p-4 flex items-center justify-between bg-gray-800 text-white shadow-lg">
+				<div className="flex items-center">
+					<button
+						type="button"
+						onClick={() => setIsOpen(true)}
+						className="p-2 hover:bg-gray-700 rounded-lg transition-colors"
+						aria-label="Open menu"
+					>
+						<Menu size={24} />
+					</button>
+					<h1 className="ml-4 text-xl font-semibold flex items-center gap-2">
+						<Link to="/">
+							<img
+								src="/tanstack-word-logo-white.svg"
+								alt="TanStack Logo"
+								className="h-10"
+							/>
+						</Link>
+						<span className="text-gray-400 font-light">|</span>
+						<span>OCR Service</span>
+					</h1>
+				</div>
+				<div className="hidden md:flex gap-4">
+					<a
+						href="http://127.0.0.1:8000/docs"
+						target="_blank"
+						rel="noreferrer"
+						className="flex items-center gap-2 hover:text-cyan-400 transition-colors"
+					>
+						<BookOpen size={18} />
+						<span>Swagger UI</span>
+					</a>
+					<a
+						href="http://127.0.0.1:8000/redoc"
+						target="_blank"
+						rel="noreferrer"
+						className="flex items-center gap-2 hover:text-cyan-400 transition-colors"
+					>
+						<FileJson size={18} />
+						<span>ReDoc</span>
+					</a>
+				</div>
 			</header>
 
 			<aside
@@ -57,6 +81,32 @@ export default function Header() {
 						<Home size={20} />
 						<span className="font-medium">Home</span>
 					</Link>
+
+					<div className="mt-6 mb-2 text-xs font-semibold text-gray-500 uppercase tracking-wider px-3">
+						API Documentation
+					</div>
+
+					<a
+						href="http://127.0.0.1:8000/docs"
+						target="_blank"
+						rel="noreferrer"
+						onClick={() => setIsOpen(false)}
+						className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-800 transition-colors mb-2"
+					>
+						<BookOpen size={20} />
+						<span className="font-medium">Swagger UI</span>
+					</a>
+
+					<a
+						href="http://127.0.0.1:8000/redoc"
+						target="_blank"
+						rel="noreferrer"
+						onClick={() => setIsOpen(false)}
+						className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-800 transition-colors mb-2"
+					>
+						<FileJson size={20} />
+						<span className="font-medium">ReDoc</span>
+					</a>
 
 					{/* Demo Links Start */}
 

@@ -6,6 +6,7 @@ Thumbs.db
 !.vscode/settings.json
 !.vscode/extensions.json
 !.vscode/launch.json
+*.log
 
 # Project specifics
 test_assets/
