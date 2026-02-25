@@ -8,6 +8,7 @@
       "source.organizeImports": "explicit"
     }
   },
+  "ty.path": ["${workspaceFolder}/backend/.venv/bin:${env:PATH}"],
   "ruff.interpreter": ["${workspaceFolder}/backend/.venv/bin/python"],
   "ruff.importStrategy": "fromEnvironment",
   // Configure Ruff to check and format the entire backend folder relative to root
