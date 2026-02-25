@@ -1,0 +1,29 @@
+{
+  "python.defaultInterpreterPath": "${workspaceFolder}/backend/.venv/bin/python",
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit",
+      "source.organizeImports": "explicit"
+    }
+  },
+  "ruff.interpreter": ["${workspaceFolder}/backend/.venv/bin/python"],
+  "ruff.importStrategy": "fromEnvironment",
+  // Configure Ruff to check and format the entire backend folder relative to root
+  
+  // Ty settings (if using Ty extension or general Python integration)
+  // Ty works by checking your code, usually run via CLI.
+  // Assuming Ty is installed in the venv, we can point specific tasks to it if needed.
+  // There isn't a standard "ty.interpreter" setting yet, but setting the Python interpreter
+  // correctly allows terminals to find `ty` if activated.
+  "terminal.integrated.env.linux": {
+    "PATH": "${workspaceFolder}/backend/.venv/bin:${env:PATH}"
+  },
+  "terminal.integrated.env.osx": {
+    "PATH": "${workspaceFolder}/backend/.venv/bin:${env:PATH}"
+  },
+  "terminal.integrated.env.windows": {
+    "PATH": "${workspaceFolder}/backend/.venv/Scripts;${env:PATH}"
+  }
+}

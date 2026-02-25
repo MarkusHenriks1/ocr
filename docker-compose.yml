@@ -1,0 +1,7 @@
+services:
+  ocr:
+    image: jitesoft/tesseract-ocr:latest
+    # We use this entrypoint to keep the container definition valid
+    # even though we mostly use it for pulling the image.
+    # The backend runs this image ephemerally using `podman run`.
+    entrypoint: ["tesseract"] 

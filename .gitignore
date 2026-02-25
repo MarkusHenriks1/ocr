@@ -1,0 +1,23 @@
+# OS & Editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+
+# Project specifics
+test_assets/
+.env
+
+# Dependencies / Output (handled by subdirectories too, but good to have)
+node_modules/
+dist/
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+coverage/
+.mypy_cache/
+.ruff_cache/
